@@ -6,21 +6,24 @@ class SearchBar extends Component {
   // }
   constructor(props) {
     super(props);
-    this.state = { term: 'Test' };
+    this.state = { term: '' };
   }
 
 
   render() {
     return (
-      <div>
+      <div className="search-bar">
         <input
           value={this.state.term}
-          onChange={eventObject => this.setState({
-            term: eventObject.target.value
-          })}
+          onChange={eventObject => this.onInputChange(eventObject.target.value)}
         />
       </div>
     )
+  }
+
+  onInputChange(term) {
+    this.setState({ term });
+    this.props.onSerchTermChange(term);
   }
 }
 
