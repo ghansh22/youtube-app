@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 
 class SearchBar extends Component {
-  onInputChange(eventObject) {
-    console.log(eventObject.target.value);
-  }
+  // onInputChange(eventObject) {
+  //   console.log(eventObject.target.value);
+  // }
 
   render() {
-    return <input onChange={this.onInputChange} />
+    return <input onChange={eventObject => console.log(eventObject.target.value)} />
   }
 }
 
